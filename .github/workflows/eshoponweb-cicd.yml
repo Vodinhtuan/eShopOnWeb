@@ -53,6 +53,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: buildandtest
+    permissions:
+      id-token: write    # Cho phép GitHub Actions phát hành OIDC token
+      contents: read
     environment:
       name: 'Development'
     steps:
